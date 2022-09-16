@@ -127,17 +127,3 @@ func (s *ServiceDiscovery) extractAdders(resp *clientv3.GetResponse) []string {
 func (s *ServiceDiscovery) Close() error {
 	return s.cli.Close()
 }
-
-//func main() {
-//	var endpoints = []string{"localhost:2379"}
-//	ser := NewServiceDiscovery(endpoints)
-//	defer ser.Close()
-//	ser.WatchService("/web/")
-//	ser.WatchService("/gRPC/")
-//	for {
-//		select {
-//		case <-time.Tick(10 * time.Second):
-//			log.Println(ser.GetServices())
-//		}
-//	}
-//}
